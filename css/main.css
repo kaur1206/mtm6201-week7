@@ -1,0 +1,100 @@
+:root{
+    --primary-color:  plum;
+    --secondary-color: rgba(5, 122, 122, 0.938);
+    --light-color: rgb(209, 186, 158);
+    --dark-color: black;
+    --large-font: 2rem;
+
+}
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+ /* space is descendnt combinator */
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li{
+    flex: 1;
+}
+
+nav li a,
+nav li a:link,
+nav li a:visited{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    transition: .5s;
+}
+
+nav li a:hover,
+nav li a:focus{
+    text-decoration: underline;
+    transform: scale(1.25);
+}
+
+nav li a:active{
+    transform: scale(1.5) translateX(15px);
+}
+
+
+/* [] is for attribute selector */
+
+a[href="#"]{
+    border: 1px solid var(--primary-color);
+}
+
+/* ^ is for start with */
+a[href^="http"]{
+    border-left: 8px solid var(--primary-color);
+}
+
+/* > is for child elementor */
+main > p{
+    font-size: 1.25rem;
+}
+
+/* + is for adjacent combinator */
+h2 + p{
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 1rem;
+}
+
+.stars span{
+    cursor: pointer;
+    transition: opacity .3s;
+
+}
+/* ~ is for sigbling combinator */
+.stars span:hover~span{
+    opacity: .4;
+}
+
+a[href$=".pdf"]{
+    color: var(--light-color);
+}
+
+/* ::after is psuedo element */
+a[href$=".pdf"]::after{
+     content: "\2193";
+     font-weight: bold;
+     font: 1.2rem;
+}
+
+h2 + p::first-line{
+    color: var(--dark-color);
+}
+
+h3 + p::first-letter{
+    background-color:var(--primary-color);
+    color: rgb(156, 12, 188);
+    padding: .15rem;
+    margin-right: .15rem;
+}
